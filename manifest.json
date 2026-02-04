@@ -1,10 +1,10 @@
 {
 	"id": "habit-tracker",
-	"name": "습관 트래커",
+	"name": "습관트래커",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
 	"description": "Obsidian에서 습관을 추적하고 관리하는 플러그인",
-	"author": "Your Name",
-	"authorUrl": "",
+	"author": "sukjin1234",
+	"authorUrl": "https://github.com/sukjin1234",
 	"isDesktopOnly": false
 }

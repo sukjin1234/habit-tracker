@@ -6,11 +6,39 @@
 	--habit-border: var(--background-modifier-border);
 	--habit-text: var(--text-normal);
 	--habit-text-muted: var(--text-muted);
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	overflow-x: auto;
 }
 
 .habit-tracker {
+	--habit-max-width: 420px;
+	width: 100%;
+	max-width: var(--habit-max-width);
+	min-width: 280px;
+	margin: 0 auto;
 	padding: 16px;
-	max-width: 100%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+	.habit-tracker {
+		min-width: 0;
+		padding: 12px;
+	}
+}
+
+@media (min-width: 768px) {
+	.habit-tracker {
+		--habit-max-width: 460px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.habit-tracker {
+		--habit-max-width: 500px;
+	}
 }
 
 /* 헤더 */
