@@ -411,12 +411,281 @@
 }
 
 .option-check {
-	width: 24px;
-	height: 24px;
+	width: 22px;
+	height: 22px;
 	border-radius: 50%;
-	background-color: var(--text-normal);
-	color: var(--background-primary);
+	background-color: var(--interactive-accent);
+	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.option-icon-none {
+	background-color: var(--background-modifier-border) !important;
+	color: var(--text-muted);
+}
+
+.option-icon svg {
+	color: white;
+}
+
+.option-icon-none svg {
+	color: var(--text-muted);
+}
+
+/* 설정 버튼 */
+.btn-settings {
+	padding: 8px;
+	border: none;
+	border-radius: 8px;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s;
+}
+
+.btn-settings:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.btn-settings.active {
+	background-color: var(--interactive-accent);
+	color: white;
+}
+
+/* 설정 페이지 */
+.habit-settings {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.settings-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.settings-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-normal);
+	margin: 0;
+}
+
+.btn-add-habit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 14px;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--interactive-accent);
+	color: white;
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.btn-add-habit:hover {
+	opacity: 0.9;
+}
+
+.habits-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.habit-item {
+	background-color: var(--background-secondary);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.habit-item-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px;
+}
+
+.habit-item-info {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.habit-item-color {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.habit-item-details {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.habit-item-name {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.habit-item-levels {
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.habit-item-actions {
+	display: flex;
+	gap: 4px;
+}
+
+.btn-edit,
+.btn-delete {
+	padding: 6px;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-edit:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--interactive-accent);
+}
+
+.btn-delete:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--color-red);
+}
+
+.habit-edit-card {
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	background-color: var(--background-secondary);
+	border-radius: 12px;
+}
+
+.edit-field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.edit-field label {
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--text-muted);
+}
+
+.edit-field input {
+	padding: 10px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 14px;
+}
+
+.edit-field input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+}
+
+.color-picker {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.color-option {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: transform 0.15s;
+}
+
+.color-option:hover {
+	transform: scale(1.1);
+}
+
+.color-option.selected {
+	border-color: white;
+	box-shadow: 0 0 0 2px var(--background-primary);
+}
+
+.edit-actions {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	margin-top: 4px;
+}
+
+.btn-cancel {
+	padding: 8px 16px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: transparent;
+	color: var(--text-muted);
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.btn-cancel:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.btn-save {
+	padding: 8px 16px;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--interactive-accent);
+	color: white;
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.btn-save:hover {
+	opacity: 0.9;
+}
+
+.btn-add-first {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--interactive-accent);
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	margin-top: 12px;
+}
+
+.habit-empty {
+	text-align: center;
+	padding: 40px 20px;
+	color: var(--text-muted);
+}
+
+.habit-empty p {
+	margin: 0 0 16px 0;
 }

@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { X, Check } from 'lucide-react';
+import { X, Check, Minus } from 'lucide-react';
 import { Habit, HabitLevel } from '../types';
 
 interface StatusPickerProps {
@@ -14,7 +14,7 @@ export function StatusPicker({ date, habit, onClose, onSelect }: StatusPickerPro
 	const currentLevel = habit.data[dateStr] || 0;
 
 	const levels: { level: HabitLevel; label: string }[] = [
-		{ level: 0, label: '쉬기' },
+		{ level: 0, label: '안함' },
 		{ level: 1, label: habit.levels[0] },
 		{ level: 2, label: habit.levels[1] },
 		{ level: 3, label: habit.levels[2] },
@@ -29,7 +29,7 @@ export function StatusPicker({ date, habit, onClose, onSelect }: StatusPickerPro
 						<p className="picker-subtitle">{habit.name} 기록하기</p>
 					</div>
 					<button onClick={onClose} className="picker-close-btn">
-						<X size={20} />
+						<X size={18} />
 					</button>
 				</div>
 
@@ -42,27 +42,27 @@ export function StatusPicker({ date, habit, onClose, onSelect }: StatusPickerPro
 						>
 							<div className="option-content">
 								<div
-									className="option-icon"
+									className={`option-icon ${level === 0 ? 'option-icon-none' : ''}`}
 									style={
 										level > 0
 											? {
 													backgroundColor: habit.color,
-													opacity: level === 1 ? 0.3 : level === 2 ? 0.6 : 1,
+													opacity: level === 1 ? 0.4 : level === 2 ? 0.7 : 1,
 												}
 											: {}
 									}
 								>
 									{level === 0 ? (
-										<X size={18} className="icon-muted" />
+										<Minus size={16} />
 									) : (
-										<Check size={18} className="icon-light" />
+										<Check size={16} />
 									)}
 								</div>
 								<span className="option-label">{label}</span>
 							</div>
 							{currentLevel === level && (
 								<div className="option-check">
-									<Check size={14} />
+									<Check size={12} />
 								</div>
 							)}
 						</button>
